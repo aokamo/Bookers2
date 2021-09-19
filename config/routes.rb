@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
 
-  resources :books, only: [:new, :create, :index, :edit, :show, :destroy]
+  resources :books, only: [:new, :create, :index, :edit, :update, :show, :destroy]
 
-  resources :users, only: [:new, :edit, :show, :update,]
+  resources :users, only: [:new, :edit, :index, :show, :update,]
 
 end

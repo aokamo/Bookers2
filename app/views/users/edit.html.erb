@@ -1,33 +1,27 @@
-<h1>User info</h1>
-
-<%= form_with(model: @user, local: true) do |form| %>
-  <% if @user.errors.any? %>
-     <%= @user.errors.count %>errors prohibited this book from being saved
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+  <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+    <h1>User info</h1>
+        <% if @user.errors.any? %>
+           <%= @user.errors.count %>errors prohibited your account from being saved
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
         <% end %>
-        </ul>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+      <%= form_with model: @user, local:true do |f| %>
+        <p><label for="inputName">Name</label></p>
+        <p><%= f.text_field :name %></p>
+          <p><label for="inputImage">Image</label></p>
+          <p><label for="inputIntroduction">Introduction</label></p>
+            <p><%= f.text_area :introduction %></p>
+            <p><%= f.submit "Update User" %></p>
+      <% end %>
+
+    </div>
+    <div class="col-4">
+    </div>
   </div>
-
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-    <label for="inputImage">ProfileImage</label>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-
-
-  <div class="field">
-    <%= form.label :opinion %>
-    <%= form.text_area :opinion %>
-  </div>
-
-  <div class="actions">
-    <%= form.update %>
-  </div>
-
-  <% end %>
-
-<% end %>

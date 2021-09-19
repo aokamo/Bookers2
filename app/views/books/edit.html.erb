@@ -1,3 +1,7 @@
+<div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
 <h1>Editing Book</h1>
 
   <%= form_with(model: @book, local: true) do |form| %>
@@ -12,13 +16,13 @@
   <% end %>
 
           <div class="field">
-            <%= form.label :title %>
-            <%= form.text_field :title %>
+            <p><%= form.label :title %></p>
+            <p><%= form.text_field :title %></p>
           </div>
 
           <div class="field">
-            <%= form.label :opinion %>
-            <%= form.text_area :opinion %>
+            <p><%= form.label :opinion %></p>
+            <p><%= form.text_area :opinion %></p>
           </div>
 
           <div class="actions">
@@ -29,3 +33,6 @@
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>
+</div>
+    <div class="col-4">
+    </div>

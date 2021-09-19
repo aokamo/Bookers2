@@ -42,8 +42,7 @@
             <% end %>
          </div>
             <div class="col-lg-8">
-
-              <h1>Book detail</h1>
+              <h1>Users</h1>
               <table class="table table-striped">
                   <thead>
                     <tr>
@@ -53,12 +52,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% @books.each do |book| %>
+                    <% @users.each do |user| %>
                       <tr>
-                        <td><%= book.title %></td>
-                        <td><%= book.opinion %></td>
-                        <td><%= link_to 'edit', edit_book_path(book), class: "btn btn-sm btn-success" %></td>
-                        <td><%= link_to 'destroy', book_path, method: :delete, data: { confirm: '本当に消しますか ?' }, class: "btn btn-sm btn-danger" %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.name %></td>
+                        <td><%= link_to 'Show', user %></td>
                       </tr>
                     <% end %>
                   </tbody>
@@ -67,3 +65,4 @@
      </div>
     </div>
   </body>
+</html>
