@@ -16,7 +16,8 @@
         <p><label for="inputName">Name</label></p>
         <p><%= f.text_field :name %></p>
           <p><label for="inputImage">Image</label></p>
-          <p><label for="inputIntroduction">Introduction</label></p>
+          <p><%= f.attachment_field :profile_image %></p>
+            <p><label for="inputIntroduction">Introduction</label></p>
             <p><%= f.text_area :introduction %></p>
             <p><%= f.submit "Update User" %></p>
       <% end %>
